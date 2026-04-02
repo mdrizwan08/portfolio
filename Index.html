@@ -68,8 +68,76 @@
     .stat-num { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: var(--accent); }
     .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 1px; }
 
+    /* ────────────── SKILLS CATEGORY BOXES ────────────── */
+    .skills-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 1.4rem;
+    }
+    .skill-category-box {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem 1.6rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      cursor: default;
+      position: relative; overflow: hidden;
+    }
+    /* top accent bar — all green, different shade per category */
+    .skill-category-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .skill-category-box.prog::before  { background: linear-gradient(90deg, var(--neon), var(--g400)); }
+    .skill-category-box.fw::before    { background: linear-gradient(90deg, var(--g600), var(--neon-mid)); }
+    .skill-category-box.db::before    { background: linear-gradient(90deg, var(--g400), var(--g200)); }
+    .skill-category-box.tools::before { background: linear-gradient(90deg, var(--neon-mid), var(--g300)); }
+    .skill-category-box.soft::before  { background: linear-gradient(90deg, var(--g300), var(--neon)); }
+
+    .skill-category-box:hover {
+      transform: translateY(-4px);
+      border-color: var(--g300);
+      box-shadow: 0 0 24px var(--neon-glow-sm), var(--shadow-md);
+    }
+
+    .skill-cat-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 1.1rem;
+    }
+    .skill-cat-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--g100); border: 1px solid var(--border-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--g700);
+    }
+    .skill-cat-icon svg { width: 17px; height: 17px; }
+    .skill-cat-title { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--g900); }
+    .skill-cat-count { font-size: 0.71rem; color: var(--text-muted); margin-top: 1px; }
+
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--bg2); border: 1px solid var(--border-light);
+      border-radius: 100px; padding: 5px 12px;
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--g800); transition: all 0.22s; cursor: default;
+    }
+    .skill-pill:hover {
+      background: var(--g700); color: #fff;
+      border-color: var(--g700);
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px var(--neon-glow);
+    }
+    .pill-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--neon); flex-shrink: 0;
+      box-shadow: 0 0 4px var(--neon-glow);
+    }
+
     /* SKILLS (compact) */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.9rem; }
+    /* .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.9rem; }
     .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 0.5rem 0.7rem; box-shadow: var(--shadow); text-align: center; cursor: default; transition: all 0.3s; }
     .skill-card:hover { transform: translateY(-4px) scale(1.04); border-color: var(--neon-blue); box-shadow: 0 0 22px rgba(0,176,255,0.28), 0 6px 20px rgba(0,0,0,0.08); }
     .skill-card:hover .ring-fill { filter: drop-shadow(0 0 4px var(--neon-blue)); }
@@ -81,7 +149,7 @@
     .ring-bg { stroke: var(--border); }
     .ring-fill { stroke: var(--accent); transition: stroke-dashoffset 1.3s ease; }
     .ring-fill.gold { stroke: var(--accent2); }
-    .skill-pct { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 0.68rem; font-weight: 700; color: var(--text-primary); }
+    .skill-pct { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 0.68rem; font-weight: 700; color: var(--text-primary); } */
 
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 1.4rem; }
@@ -256,6 +324,76 @@
 </section>
 
 <hr class="divider" style="max-width:900px;margin:0 auto"/> -->
+<!-- ══════════════ SKILLS ══════════════ -->
+<section id="skills">
+  <p class="section-label">Skills</p>
+  <h2>What I Work With</h2>
+  <div class="skills-categories">
+
+    <!-- PROGRAMMING -->
+    <div class="skill-category-box prog">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div>
+          <div class="skill-cat-title">Programming</div>
+          <div class="skill-cat-count">6 skills</div>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill"><span class="pill-dot"></span>Python</span>
+        <span class="skill-pill"><span class="pill-dot"></span>JavaScript</span>
+        <span class="skill-pill"><span class="pill-dot"></span>HTML</span>
+        <span class="skill-pill"><span class="pill-dot"></span>CSS</span>
+        <span class="skill-pill"><span class="pill-dot"></span>C</span>
+        <span class="skill-pill"><span class="pill-dot"></span>Java (Basics)</span>
+      </div>
+    </div>
+
+    <!-- FRAMEWORKS -->
+    <div class="skill-category-box fw">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </div>
+        <div>
+          <div class="skill-cat-title">Frameworks & Libraries</div>
+          <div class="skill-cat-count">8 skills</div>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill"><span class="pill-dot"></span>Flask</span>
+        <span class="skill-pill"><span class="pill-dot"></span>Django</span>
+        <span class="skill-pill"><span class="pill-dot"></span>TensorFlow</span>
+        <span class="skill-pill"><span class="pill-dot"></span>Scikit-learn</span>
+        <span class="skill-pill"><span class="pill-dot"></span>Pandas</span>
+        <span class="skill-pill"><span class="pill-dot"></span>NumPy</span>
+        <span class="skill-pill"><span class="pill-dot"></span>Matplotlib</span>
+        <span class="skill-pill"><span class="pill-dot"></span>Streamlit</span>
+      </div>
+    </div>
+
+    <!-- DATABASES -->
+    <div class="skill-category-box db">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div>
+          <div class="skill-cat-title">Databases</div>
+          <div class="skill-cat-count">5 skills</div>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="skill-pill"><span class="pill-dot"></span>MySQL</span>
+        <span class="skill-pill"><span class="pill-dot"></span>PostgreSQL</span>
+        <span class="skill-pill"><span class="pill-dot"></span>SQLite</span>
+        <span class="skill-pill"><span class="pill-dot"></span>MongoDB</span>
+        <span class="skill-pill"><span class="pill-dot"></span>SQL Queries</span>
+      </div>
+    </div>
+
 
 <!-- PROJECTS -->
 <section id="projects">
