@@ -16,7 +16,6 @@
       --neon-purple: #d500f9; --neon-amber: #ffab00;
       --shadow: 0 2px 16px rgba(0,0,0,0.06); --radius: 14px;
 
-      /* Skills section green palette */
       --neon: #00e676;
       --neon-mid: #00c853;
       --neon-glow: rgba(0,230,118,0.35);
@@ -28,8 +27,6 @@
       --g600: #388e3c;
       --g700: #2e7d32;
       --g800: #1b5e20;
-      --g900: #1a1714;
-      --g900: var(--text-primary);
       --bg2: #f1f8f2;
       --border-light: #dde8de;
       --shadow-md: 0 6px 24px rgba(0,0,0,0.09);
@@ -87,73 +84,25 @@
     .stat-num { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: var(--accent); }
     .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 1px; }
 
-    /* ────── SKILLS CATEGORY BOXES ────── */
-    .skills-categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-      gap: 1.4rem;
-    }
-    .skill-category-box {
-      background: var(--surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius);
-      padding: 1.4rem 1.5rem 1.6rem;
-      box-shadow: var(--shadow);
-      transition: all 0.3s;
-      cursor: default;
-      position: relative;
-      overflow: hidden;
-    }
-    .skill-category-box::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      border-radius: var(--radius) var(--radius) 0 0;
-    }
+    /* SKILLS */
+    .skills-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 1.4rem; }
+    .skill-category-box { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 1.4rem 1.5rem 1.6rem; box-shadow: var(--shadow); transition: all 0.3s; cursor: default; position: relative; overflow: hidden; }
+    .skill-category-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: var(--radius) var(--radius) 0 0; }
     .skill-category-box.prog::before  { background: linear-gradient(90deg, #00e676, #66bb6a); }
     .skill-category-box.fw::before    { background: linear-gradient(90deg, #388e3c, #00c853); }
     .skill-category-box.db::before    { background: linear-gradient(90deg, #66bb6a, #c8e6c9); }
     .skill-category-box.tools::before { background: linear-gradient(90deg, #00c853, #a5d6a7); }
     .skill-category-box.soft::before  { background: linear-gradient(90deg, #a5d6a7, #00e676); }
-
-    .skill-category-box:hover {
-      transform: translateY(-4px);
-      border-color: var(--g300);
-      box-shadow: 0 0 24px rgba(0,230,118,0.2), 0 6px 24px rgba(0,0,0,0.09);
-    }
-
-    .skill-cat-header {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 1.1rem;
-    }
-    .skill-cat-icon {
-      width: 36px; height: 36px; border-radius: 9px;
-      background: var(--g100); border: 1px solid var(--border-light);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: var(--g700);
-    }
+    .skill-category-box:hover { transform: translateY(-4px); border-color: var(--g300); box-shadow: 0 0 24px rgba(0,230,118,0.2), 0 6px 24px rgba(0,0,0,0.09); }
+    .skill-cat-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1.1rem; }
+    .skill-cat-icon { width: 36px; height: 36px; border-radius: 9px; background: var(--g100); border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--g700); }
     .skill-cat-icon svg { width: 17px; height: 17px; }
     .skill-cat-title { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--text-primary); }
     .skill-cat-count { font-size: 0.71rem; color: var(--text-muted); margin-top: 1px; }
-
     .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-pill {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--bg2); border: 1px solid var(--border-light);
-      border-radius: 100px; padding: 5px 12px;
-      font-size: 0.78rem; font-weight: 500;
-      color: var(--g800); transition: all 0.22s; cursor: default;
-    }
-    .skill-pill:hover {
-      background: var(--g700); color: #fff;
-      border-color: var(--g700);
-      transform: translateY(-2px);
-      box-shadow: 0 0 12px rgba(0,230,118,0.35);
-    }
-    .pill-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--neon); flex-shrink: 0;
-      box-shadow: 0 0 4px rgba(0,230,118,0.35);
-    }
+    .skill-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--bg2); border: 1px solid var(--border-light); border-radius: 100px; padding: 5px 12px; font-size: 0.78rem; font-weight: 500; color: var(--g800); transition: all 0.22s; cursor: default; }
+    .skill-pill:hover { background: var(--g700); color: #fff; border-color: var(--g700); transform: translateY(-2px); box-shadow: 0 0 12px rgba(0,230,118,0.35); }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--neon); flex-shrink: 0; box-shadow: 0 0 4px rgba(0,230,118,0.35); }
 
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 1.4rem; }
@@ -168,7 +117,7 @@
     .project-link:hover { color: #1e5038; }
     .project-link svg { width: 13px; height: 13px; }
 
-    /* EXP + EDU 2-col */
+    /* EXP + EDU */
     .exp-edu-wrap { max-width: 900px; margin: 0 auto; padding: 55px 2rem; }
     .exp-edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
     .exp-edu-col .section-label { margin-bottom: 0.4rem; }
@@ -206,15 +155,118 @@
     .cert-issuer { text-decoration: none; font-size: 0.76rem; color: var(--text-secondary); }
     .cert-date { font-size: 0.71rem; color: var(--neon-amber); margin-top: 3px; font-weight: 500; }
 
+    /* ─── OUR SERVICES ─── */
+    .services-intro {
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      max-width: 600px;
+      margin-bottom: 2.2rem;
+      line-height: 1.75;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 1.4rem;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.5rem 1.8rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.32s;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .service-card.s1::before { background: linear-gradient(90deg,#00e676,#66bb6a); }
+    .service-card.s2::before { background: linear-gradient(90deg,#388e3c,#00c853); }
+    .service-card.s3::before { background: linear-gradient(90deg,#00b0ff,#a5d6a7); }
+    .service-card.s4::before { background: linear-gradient(90deg,#ffab00,#66bb6a); }
+    .service-card.s5::before { background: linear-gradient(90deg,#00c853,#00b0ff); }
+    .service-card.s6::before { background: linear-gradient(90deg,#a5d6a7,#00e676); }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--g300);
+      box-shadow: 0 0 26px rgba(0,230,118,0.2), 0 8px 28px rgba(0,0,0,0.1);
+    }
+
+    .service-icon-wrap {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: var(--g100);
+      border: 1px solid var(--border-light);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover .service-icon-wrap {
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(0,230,118,0.3);
+    }
+    .service-icon-wrap svg { width: 20px; height: 20px; color: var(--g700); transition: color 0.3s; }
+    .service-card:hover .service-icon-wrap svg { color: #fff; }
+
+    .service-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 0.45rem;
+    }
+    .service-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.72;
+      margin-bottom: 1.1rem;
+    }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .service-tag {
+      font-size: 0.69rem;
+      font-weight: 500;
+      background: var(--bg2);
+      color: var(--g800);
+      border: 1px solid var(--border-light);
+      padding: 2px 9px;
+      border-radius: 100px;
+    }
+
+    /* CTA banner */
+    .services-cta {
+      margin-top: 2.2rem;
+      background: linear-gradient(135deg, var(--accent-light) 0%, #d9ede0 100%);
+      border: 1px solid var(--g200);
+      border-radius: var(--radius);
+      padding: 1.6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .services-cta-text strong {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .services-cta-text span {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
     /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.3rem; box-shadow: var(--shadow); display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--text-primary); transition: all 0.3s; }
     .contact-card:hover { transform: translateY(-3px); }
     .contact-card.li:hover { border-color: #0a66c2; box-shadow: 0 0 18px rgba(10,102,194,0.2); }
     .contact-card.gh:hover { border-color: #555; box-shadow: 0 0 18px rgba(80,80,80,0.15); }
-    .contact-card.ig:hover { border-color: #e1306c; box-shadow: 0 0 18px rgba(225,48,108,0.2); }
     .contact-card.em:hover { border-color: var(--accent); box-shadow: 0 0 18px rgba(45,106,79,0.18); }
-    .contact-card.cv:hover { border-color: var(--neon-amber); box-shadow: 0 0 18px rgba(255,171,0,0.2); }
     .contact-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .contact-icon svg { width: 17px; height: 17px; }
     .contact-label { font-size: 0.72rem; color: var(--text-secondary); }
@@ -259,6 +311,7 @@
       .footer-bar{flex-direction:column;gap:0.5rem;text-align:center}
       .skills-categories{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
+      .services-cta{flex-direction:column;text-align:center}
     }
   </style>
 </head>
@@ -270,6 +323,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
@@ -292,10 +346,6 @@
       <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
       GitHub
     </a>
-    <!-- <a href="https://www.instagram.com/md_rishwan_08?utm_source=qr&igsh=NmJ0NWd3ZDFqdDI4" target="_blank" class="btn btn-outline">
-      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      Instagram
-    </a> -->
     <a href="https://drive.google.com/file/d/1OC5dq3-7-7vLqW1kwrMIA9AxiTyAN0gN/view?usp=sharing" target="_blank" class="btn btn-cv">
       <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
       Download Resume
@@ -327,7 +377,6 @@
   <h2>What I Work With</h2>
   <div class="skills-categories">
 
-    <!-- PROGRAMMING -->
     <div class="skill-category-box prog">
       <div class="skill-cat-header">
         <div class="skill-cat-icon">
@@ -349,21 +398,6 @@
       </div>
     </div>
 
-    <!-- <div>
-          <div class="skill-cat-title">AI & ML</div>
-          <div class="skill-cat-count">6 skills</div>
-        </div>
-      </div>
-      <div class="skill-pills">
-        <span class="skill-pill"><span class="pill-dot"></span>Machine Learning</span> -->
-        <!-- <span class="skill-pill"><span class="pill-dot"></span>Java</span>
-        <span class="skill-pill"><span class="pill-dot"></span>C</span>
-        <span class="skill-pill"><span class="pill-dot"></span>HTML</span>
-        <span class="skill-pill"><span class="pill-dot"></span>CSS</span>
-        <span class="skill-pill"><span class="pill-dot"></span>JavaScript</span> -->
-      </div>
-    </div>
-    <!-- FRAMEWORKS & LIBRARIES -->
     <div class="skill-category-box fw">
       <div class="skill-cat-header">
         <div class="skill-cat-icon">
@@ -377,18 +411,14 @@
       <div class="skill-pills">
         <span class="skill-pill"><span class="pill-dot"></span>Bootstrap</span>
         <span class="skill-pill"><span class="pill-dot"></span>Tailwind CSS</span>
-        <!-- <span class="skill-pill"><span class="pill-dot"></span>Flask</span> -->
         <span class="skill-pill"><span class="pill-dot"></span>Django</span>
         <span class="skill-pill"><span class="pill-dot"></span>TensorFlow</span>
-        <!-- <span class="skill-pill"><span class="pill-dot"></span>Scikit-learn</span> -->
         <span class="skill-pill"><span class="pill-dot"></span>Pandas</span>
         <span class="skill-pill"><span class="pill-dot"></span>NumPy</span>
         <span class="skill-pill"><span class="pill-dot"></span>Matplotlib</span>
-        <!-- <span class="skill-pill"><span class="pill-dot"></span>Streamlit</span> -->
       </div>
     </div>
 
-    <!-- DATABASES -->
     <div class="skill-category-box db">
       <div class="skill-cat-header">
         <div class="skill-cat-icon">
@@ -396,20 +426,14 @@
         </div>
         <div>
           <div class="skill-cat-title">Databases</div>
-          <div class="skill-cat-count">1 skills</div>
+          <div class="skill-cat-count">1 skill</div>
         </div>
       </div>
       <div class="skill-pills">
         <span class="skill-pill"><span class="pill-dot"></span>MySQL</span>
-        <!-- <span class="skill-pill"><span class="pill-dot"></span>API</span> -->
-        <!-- <span class="skill-pill"><span class="pill-dot"></span>PostgreSQL</span>
-        <span class="skill-pill"><span class="pill-dot"></span>SQLite</span>
-        <span class="skill-pill"><span class="pill-dot"></span>MongoDB</span>
-        <span class="skill-pill"><span class="pill-dot"></span>SQL Queries</span> -->
       </div>
     </div>
 
-    <!-- TOOLS & PLATFORMS -->
     <div class="skill-category-box tools">
       <div class="skill-cat-header">
         <div class="skill-cat-icon">
@@ -429,16 +453,15 @@
         <span class="skill-pill"><span class="pill-dot"></span>Postman</span>
         <span class="skill-pill"><span class="pill-dot"></span>Anti gravity</span>
         <span class="skill-pill"><span class="pill-dot"></span>Jupyter</span>
-        
       </div>
     </div>
-  
-  <div class="skill-category-box tools">
+
+    <div class="skill-category-box tools">
       <div class="skill-cat-header">
         <div class="skill-cat-icon">
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         </div>
-     <div>
+        <div>
           <div class="skill-cat-title">Networking</div>
           <div class="skill-cat-count">2 skills</div>
         </div>
@@ -446,10 +469,9 @@
       <div class="skill-pills">
         <span class="skill-pill"><span class="pill-dot"></span>Cisco</span>
         <span class="skill-pill"><span class="pill-dot"></span>Wireshark</span>
-        
       </div>
-    </div> 
-    <!-- SOFT SKILLS -->
+    </div>
+
     <div class="skill-category-box soft">
       <div class="skill-cat-header">
         <div class="skill-cat-icon">
@@ -469,7 +491,133 @@
       </div>
     </div>
 
-  </div><!-- end .skills-categories -->
+  </div>
+</section>
+
+<hr class="divider" style="max-width:900px;margin:0 auto"/>
+
+<!-- ═══════════════════════ OUR SERVICES ═══════════════════════ -->
+<section id="services">
+  <p class="section-label">Our Services</p>
+  <h2>What I Can Do for You</h2>
+  <p class="services-intro">From idea to deployment — I offer end-to-end development and consulting services tailored to your goals. Whether you need a polished web app, an intelligent ML model, or hands-on training, I've got you covered.</p>
+
+  <div class="services-grid">
+
+    <!-- 1 -->
+    <div class="service-card s1">
+      <div class="service-icon-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <div class="service-title">Web Development</div>
+      <p class="service-desc">Building fast, responsive, and pixel-perfect websites and web applications from scratch. Includes landing pages, dashboards, e-commerce stores, and full-stack platforms.</p>
+      <div class="service-tags">
+        <span class="service-tag">React.js</span>
+        <span class="service-tag">Django</span>
+        <span class="service-tag">HTML/CSS/JS</span>
+        <span class="service-tag">MySQL</span>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="service-card s2">
+      <div class="service-icon-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>
+        </svg>
+      </div>
+      <div class="service-title">Machine Learning Solutions</div>
+      <p class="service-desc">Designing and training ML models for prediction, classification, and data-driven decision-making. From data preprocessing to model deployment.</p>
+      <div class="service-tags">
+        <span class="service-tag">Python</span>
+        <span class="service-tag">TensorFlow</span>
+        <span class="service-tag">Scikit-learn</span>
+        <span class="service-tag">Pandas</span>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="service-card s3">
+      <div class="service-icon-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+        </svg>
+      </div>
+      <div class="service-title">Data Analysis & Visualization</div>
+      <p class="service-desc">Turning raw data into clear insights using statistical analysis and compelling visual dashboards. Ideal for research reports, business metrics, and academic projects.</p>
+      <div class="service-tags">
+        <span class="service-tag">NumPy</span>
+        <span class="service-tag">Matplotlib</span>
+        <span class="service-tag">Pandas</span>
+        <span class="service-tag">Jupyter</span>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="service-card s4">
+      <div class="service-icon-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      <div class="service-title">UI/UX Design & Prototyping</div>
+      <p class="service-desc">Crafting intuitive, accessible, and visually engaging interfaces. I focus on user-centered design principles to ensure every interaction feels seamless and effortless.</p>
+      <div class="service-tags">
+        <span class="service-tag">Tailwind CSS</span>
+        <span class="service-tag">Bootstrap</span>
+        <span class="service-tag">Responsive Design</span>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="service-card s5">
+      <div class="service-icon-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+        </svg>
+      </div>
+      <div class="service-title">API Integration & Backend</div>
+      <p class="service-desc">Building and integrating RESTful APIs, third-party services, and back-end logic. Includes secure authentication, database design, and server-side development.</p>
+      <div class="service-tags">
+        <span class="service-tag">Python</span>
+        <span class="service-tag">Django REST</span>
+        <span class="service-tag">MySQL</span>
+        <span class="service-tag">Postman</span>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="service-card s6">
+      <div class="service-icon-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+      </div>
+      <div class="service-title">Technical Training & Mentoring</div>
+      <p class="service-desc">One-on-one or group coaching sessions covering web development, Python, ML fundamentals, and GitHub workflows. Tailored for students, beginners, and career switchers.</p>
+      <div class="service-tags">
+        <span class="service-tag">Web Dev</span>
+        <span class="service-tag">Python</span>
+        <span class="service-tag">GitHub</span>
+        <span class="service-tag">ML Basics</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="services-cta">
+    <div class="services-cta-text">
+      <strong>Have a project in mind?</strong>
+      <span>Let's collaborate and build something great together.</span>
+    </div>
+    <a href="mailto:mdrizwan428@gmail.com" class="btn btn-primary">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      Get in Touch
+    </a>
+  </div>
 </section>
 
 <hr class="divider" style="max-width:900px;margin:0 auto"/>
@@ -481,7 +629,6 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <!-- <span class="project-tag">Web Appliation</span> -->
       <div class="project-title">E-Commerce Site</div>
       <p class="project-desc">Developed an online store enabling users to explore products, manage cart items, and complete purchases with a smooth user experience.</p>
       <div class="project-chips"><span class="tech-chip">HTML</span><span class="tech-chip">CSS</span><span class="tech-chip">JavaScript</span><span class="tech-chip">React.js</span></div>
@@ -489,7 +636,6 @@
     </div>
 
     <div class="project-card">
-      <!-- <span class="project-tag">Web Development</span> -->
       <div class="project-title">JS Mini Projects Lab</div>
       <p class="project-desc">A collection of interactive mini projects built with vanilla JavaScript, showcasing DOM manipulation, event handling, and dynamic UI components.</p>
       <div class="project-chips"><span class="tech-chip">HTML</span><span class="tech-chip">CSS</span><span class="tech-chip">JavaScript</span></div>
@@ -497,7 +643,6 @@
     </div>
 
     <div class="project-card">
-      <!-- <span class="project-tag">React</span> -->
       <div class="project-title">Weather App</div>
       <p class="project-desc">A real-time weather application built with React that fetches live weather data via API and displays temperature, conditions, and forecasts for any city.</p>
       <div class="project-chips"><span class="tech-chip">React</span><span class="tech-chip">Geolocation API</span><span class="tech-chip">JS</span><span class="tech-chip">API</span></div>
@@ -505,27 +650,18 @@
     </div>
 
     <div class="project-card">
-      <!-- <span class="project-tag">Database</span> -->
       <div class="project-title">Login Page</div>
       <p class="project-desc">Python-based Login Page with MySQL integration enabling secure user authentication, database operations, and credential management.</p>
       <div class="project-chips"><span class="tech-chip">HTML</span><span class="tech-chip">Python</span><span class="tech-chip">MySQL</span></div>
       <a href="https://github.com/mdrizwan08/secured_login_page" target="_blank" class="project-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
     </div>
 
-     <!-- <div class="project-card">
-      <!-- <span class="project-tag">Database</span> -->
-      <!-- <div class="project-title">Banking </div>
-      <p class="project-desc">Python-based Login Page with MySQL integration enabling secure user authentication, database operations, and credential management.</p>
-      <div class="project-chips"><span class="tech-chip">HTML</span><span class="tech-chip">Java</span><span class="tech-chip">MySQL</span></div>
-      <a href="https://github.com/mdrizwan08/secured_login_page" target="_blank" class="project-link">View on GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-    </div> --> 
-
   </div>
 </section>
 
 <hr class="divider" style="max-width:900px;margin:0 auto"/>
 
-<!-- EXPERIENCE + EDUCATION (split) -->
+<!-- EXPERIENCE + EDUCATION -->
 <div class="exp-edu-wrap">
   <div class="exp-edu-grid">
 
@@ -548,7 +684,7 @@
             <div class="timeline-title">Assistant Professor</div>
             <div class="timeline-sub sub-exp">MIET College of Arts & Science, Trichy, TN</div>
             <div class="timeline-date">Jul 2025 – Oct 2025</div>
-            <div class="timeline-desc">Delivered lectures on web technologies and programming, supervising student projects and fostering practical problem-solving skills..</div>
+            <div class="timeline-desc">Delivered lectures on web technologies and programming, supervising student projects and fostering practical problem-solving skills.</div>
           </div>
         </div>
         <div class="timeline-item">
@@ -675,18 +811,10 @@
       <div class="contact-icon" style="background:#f0f0f0"><svg fill="#333" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></div>
       <div><div class="contact-label">GitHub</div><div class="contact-value">mdrizwan08</div></div>
     </a>
-    <!-- <a href="https://www.instagram.com/md_rishwan_08?utm_source=qr&igsh=NmJ0NWd3ZDFqdDI4" target="_blank" class="contact-card ig">
-      <div class="contact-icon" style="background:#fde8f0"><svg fill="none" viewBox="0 0 24 24" stroke="#e1306c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
-      <div><div class="contact-label">Instagram</div><div class="contact-value">md_rishwan_08</div></div>
-    </a> -->
     <a href="mailto:mdrizwan428@gmail.com" class="contact-card em">
       <div class="contact-icon"><svg fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
       <div><div class="contact-label">Email</div><div class="contact-value">mdrizwan428@gmail.com</div></div>
     </a>
-    <!-- <a href="https://drive.google.com/file/d/1OC5dq3-7-7vLqW1kwrMIA9AxiTyAN0gN/view?usp=sharing" target="_blank" class="contact-card cv">
-      <div class="contact-icon" style="background:#fff8e8"><svg fill="none" viewBox="0 0 24 24" stroke="#ffab00" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-      <div><div class="contact-label">Resume</div><div class="contact-value">Download Resume</div></div>
-    </a> -->
   </div>
 </section>
 
@@ -702,14 +830,15 @@
       <div class="footer-nav-row">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
       </div>
       <div class="footer-nav-row" style="margin-top:0.5rem">
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#certificates">Certificates</a></li>
       </div>
       <div class="footer-nav-row" style="margin-top:0.5rem">
+        <li><a href="#certificates">Certificates</a></li>
         <li><a href="#contact">Contact</a></li>
       </div>
     </ul>
@@ -719,12 +848,10 @@
       <div class="footer-socials-top">
         <a href="https://www.linkedin.com/in/mdrishwan08/" target="_blank" title="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://github.com/mdrizwan08" target="_blank" title="GitHub"><svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
-        <!-- <a href="https://www.instagram.com/md_rishwan_08?utm_source=qr&igsh=NmJ0NWd3ZDFqdDI4" target="_blank" title="Instagram"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a> -->
       </div>
     </div>
   </div>
   <div class="footer-bar">
-    <!-- © 2025 MD Rizwan. All rights reserved. · Designed &amp;  -->
     <p>Built by MD Rizwan</p>
     <a href="#">Back to top ↑</a>
   </div>
